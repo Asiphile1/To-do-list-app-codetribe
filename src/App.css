@@ -1,0 +1,50 @@
+.todo-form, .login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.todo-input, .login-form input, .register-form input {
+  margin: 5px;
+  padding: 10px;
+  width: 200px;
+}
+
+.todo-button, .login-form button, .register-form button {
+  margin: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+}
+
+.todo-row.complete {
+  text-decoration: line-through;
+  color: grey;
+}
+
+
+.iconsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.important-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.important-btn:hover {
+  background-color: darkorange;
+}
