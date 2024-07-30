@@ -1,58 +1,175 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
-import './components/Register';
+import Register from './components/Register';
+import Login from './components/Login';
+import Form from './components/Form'; 
+import './App.css'; // Import your App.css or any global styles
 
-export default function Register({ setPage }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+function App() {
+  const [page, setPage] = useState('login'); 
+  const [todos, setTodos] = useState([]);
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const addTodo = (task) => {
+    const newTodo = {
+      id: Date.now(),
+      task,
+      completed: false,
+      important: false, // Add this line to track importance
+    };
+    setTodos([...todos, newTodo]);
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validateEmail(username)) {
-      setError('Invalid email format');
-      return;
+  const renderPage = () => {
+    switch (page) {
+      case 'login':
+        return <Login setPage={setPage} />;
+      case 'register':
+        return <Register setPage={setPage} />;
+      case 'home':
+        return <Form setPage={setPage} addTodo={addTodo} todos={todos} setTodos={setTodos} />;
+      default:
+        return <Register setPage={setPage} />;
     }
-
-    createUserWithEmailAndPassword(auth, username, password)
-      .then(() => {
-        setPage('login');
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
   };
 
   return (
-    <div className="register-container">
-      <video autoPlay loop muted className="video-background">
-        <source src="/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
-      </video>
-      <form onSubmit={handleSubmit} className="register-form">
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-          className="register-input"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          className="register-input"
-        />
-        <button type="submit" className="register-button">Register</button>
-        <button type="button" onClick={() => setPage('login')} className="back-to-login-button">Back to Login</button>
-        {error && <p className="error-message">{error}</p>}
-      </form>
+    <div className="App">
+      {renderPage()}
     </div>
   );
 }
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import Register from './components/Register';
+// import Login from './components/login';
+// import Form from './components/form'
+// // import other components like Home, Form, etc.
+
+// function App() {
+//   const [page, setPage] = useState('login'); // initial page set to 'register'
+
+//   const renderPage = () => {
+//     switch (page) {
+//       case 'login':
+//         return <Login setPage={setPage} />;
+//       case 'register':
+//         return <Register setPage={setPage} />;
+//        case 'home':
+//        return <Form setPage={setPage} />;
+//       // case 'form':
+//       //   return <Form setPage={setPage} />;
+//       default:
+//         return <Register setPage={setPage} />;
+//     }
+//   };
+
+//   return (
+//     <div className="App">
+//       {renderPage()}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { createUserWithEmailAndPassword } from 'firebase/auth';
+// import { auth } from './firebase';
+// import './components/Register';
+
+
+
+// export default function Register({ setPage }) {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [error, setError] = useState('');
+
+//   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (!validateEmail(username)) {
+//       setError('Invalid email format');
+//       return;
+//     }
+
+//     createUserWithEmailAndPassword(auth, username, password)
+//       .then(() => {
+//         setPage('login');
+//       })
+//       .catch((error) => {
+//         setError(error.message);
+//       });
+//   };
+
+//   return (
+//     <div className="register-container">
+//       <video autoPlay loop muted className="video-background">
+//         <source src="/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+//       </video>
+//       <form onSubmit={handleSubmit} className="register-form">
+//         <input
+//           type="text"
+//           value={username}
+//           onChange={(e) => setUsername(e.target.value)}
+//           placeholder="Username"
+//           className="register-input"
+//         />
+//         <input
+//           type="password"
+//           value={password}
+//           onChange={(e) => setPassword(e.target.value)}
+//           placeholder="Password"
+//           className="register-input"
+//         />
+//         <button type="submit" className="register-button">Register</button>
+//         <button type="button" onClick={() => setPage('login')} className="back-to-login-button">Back to Login</button>
+//         {error && <p className="error-message">{error}</p>}
+//       </form>
+//     </div>
+//   );
+// }
 
 
 
