@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiCloseCircleLine } from "react-icons/ri"
 import { BiCheckCircle } from "react-icons/bi"
+import './Item.css';
 
 export default function TodoItem(props) {
     const { todo, removeTodo, completeTodo, importantTodo } = props

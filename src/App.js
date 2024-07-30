@@ -1,62 +1,58 @@
-import React, { useState } from "react";
-import TodoForm from "./components/form";
-import TodoItem from "./components/Item";
-import Login from "./components/login";
-import Register from "./components/Register";
+import React, { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase';
+import './components/Register';
 
-function App() {
-  const [page, setPage] = useState("login");
-  const [todos, setTodos] = useState([]);
+export default function Register({ setPage }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const addTodo = (text) => {
-    const newTodos = [...todos, { id: Date.now(), text, completed: false, important: false }];
-    setTodos(newTodos);
-  };
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const removeTodo = (id) => {
-    const newTodos = todos.filter(todo => todo.id !== id);
-    setTodos(newTodos);
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateEmail(username)) {
+      setError('Invalid email format');
+      return;
+    }
 
-  const completeTodo = (id) => {
-    const newTodos = todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo);
-    setTodos(newTodos);
-  };
-
-  const importantTodo = (id) => {
-    const newTodos = todos.map(todo => todo.id === id ? { ...todo, important: !todo.important } : todo);
-    setTodos(newTodos);
+    createUserWithEmailAndPassword(auth, username, password)
+      .then(() => {
+        setPage('login');
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
-    <div className="App">
-      {page === "login" && <Login setPage={setPage} />}
-      {page === "register" && <Register setPage={setPage} />}
-      {page === "home" && (
-        <>
-          <TodoForm addTodo={addTodo} />
-          {todos.map(todo => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              removeTodo={removeTodo}
-              completeTodo={completeTodo}
-              importantTodo={importantTodo}
-            />
-          ))}
-        </>
-      )}
+    <div className="register-container">
+      <video autoPlay loop muted className="video-background">
+        <source src="/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+      </video>
+      <form onSubmit={handleSubmit} className="register-form">
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+          className="register-input"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          className="register-input"
+        />
+        <button type="submit" className="register-button">Register</button>
+        <button type="button" onClick={() => setPage('login')} className="back-to-login-button">Back to Login</button>
+        {error && <p className="error-message">{error}</p>}
+      </form>
     </div>
   );
 }
-
-export default App;
-
-
-
-
-
-
 
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './form.css';
 
 export default function TodoForm(props) {
   const [input, setInput] = useState("");
@@ -16,9 +16,9 @@ export default function TodoForm(props) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         className="todo-input"
-        placeholder="Add a todo"
+        placeholder="Please type what must be done"
       />
-      <button type="submit" className="todo-button">Add Todo</button>
+      <button type="submit" className="todo-button">Add Task</button>
     </form>
   );
 }
