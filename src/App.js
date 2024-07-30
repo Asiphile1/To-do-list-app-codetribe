@@ -13,7 +13,8 @@ function App() {
       id: Date.now(),
       task,
       completed: false,
-      important: false, // Add this line to track importance
+      
+      importance: 'none',
     };
     setTodos([...todos, newTodo]);
   };
@@ -39,9 +40,6 @@ function App() {
 }
 
 export default App;
-
-
-
 
 
 

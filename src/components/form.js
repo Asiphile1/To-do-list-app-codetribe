@@ -12,6 +12,16 @@ export default function Form({ setPage, addTodo, todos, setTodos }) {
     setInput("");
   };
 
+  const updateImportance = (id, importance) => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, importance };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
+
   return (
     <div>
       <video autoPlay loop muted className="video-background">
@@ -26,8 +36,6 @@ export default function Form({ setPage, addTodo, todos, setTodos }) {
         />
         <button type="submit" className="todo-button">Add Task</button>
       </form>
-      <button onClick={() => setPage('login')} className="logout-button">Logout</button>
-
       <ul>
         {todos.map(todo => (
           <Item 
@@ -43,19 +51,11 @@ export default function Form({ setPage, addTodo, todos, setTodos }) {
               });
               setTodos(updatedTodos);
             }}
-            importantTodo={(id) => {
-              const updatedTodos = todos.map(t => {
-                if (t.id === id) {
-                  return { ...t, important: !t.important };
-                }
-                return t;
-              });
-              setTodos(updatedTodos);
-            }}
+            updateImportance={updateImportance}
           />
         ))}
       </ul>
-      
+      <button onClick={() => setPage('login')} className="logout-button">Logout</button>
     </div>
   );
 }
