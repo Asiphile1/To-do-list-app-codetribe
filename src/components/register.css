@@ -46,32 +46,3 @@
 
 
 
-
-
-
-
-/* .register-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .register-input {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .register-button, .back-to-login-button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #20a4f3;
-    color: white;
-    cursor: pointer;
-  }
-   */
