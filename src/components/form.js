@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, TextField } from '@mui/material';
 import './form.css';
-import Item from './Item';
+import TodoItem from './Item';  // Ensure this path is correct
 
 export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo, updateImportance }) {
   const [input, setInput] = useState("");
@@ -31,7 +31,7 @@ export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo
       </form>
       <ul>
         {todos.map(todo => (
-          <Item 
+          <TodoItem 
             key={todo.id}
             todo={todo}
             removeTodo={removeTodo}
