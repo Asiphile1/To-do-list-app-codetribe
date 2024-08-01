@@ -3,7 +3,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Form from './components/Form';
 import Loader from './components/Loader';
-import { getTodos, addTodo as addTodoAPI, removeTodo, updateTodo } from './api';
+import { getTodos, addTodo as addTodoAPI, removeTodo, updateTodo } from './components/api';
 
 function App() {
   const [page, setPage] = useState('login');

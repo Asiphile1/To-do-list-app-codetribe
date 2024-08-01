@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './form.css';
-import { addTodo as addTodoAPI, removeTodo, updateTodo } from '../api';
+import { addTodo as addTodoAPI, removeTodo, updateTodo } from '../components/api';
 
 export default function Form({ setPage, addTodo, todos }) {
   const [input, setInput] = useState("");
