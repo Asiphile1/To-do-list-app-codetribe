@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
+
 import './login.css';
 
 export default function Login({ setPage }) {
@@ -55,3 +54,21 @@ export default function Login({ setPage }) {
 }
 
 
+
+
+// git init
+// git add .
+// git commmit -m "removing firebase 31/07/2024"
+// git push 
+// 'https://github.com/Asiphile1/To-do-list-app-codetribe.git'
+
+
+// git init
+// git add .
+// git commmit -m "removing firebase 31/07/2024"
+// git branch -M main
+// git remote add origin 'https://github.com/Asiphile1/To-do-list-app-codetribe.git'
+// git push -u origin main 
+
+
+// git commit -m "first commit"
