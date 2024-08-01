@@ -1,24 +1,15 @@
 {
-  "todos": [
+  "todos": [],
+  "users": [
     {
-      "id": "cc92",
-      "task": "56umn546im56ime5",
-      "completed": false,
-      "importance": "none"
+      "id": 1,
+      "username": "asi@gmail.com",
+      "password": "123456"
     },
     {
-      "id": "cf47",
-      "task": "ns65s654i mtr6iiiiiiiiiii",
-      "completed": false,
-      "importance": "none"
-    },
-    {
-      "id": "91c3",
-      "task": "iiiiiide6i 5i",
-      "completed": false,
-      "importance": "none"
+      "id": "6a97",
+      "username": "asi@gmail.com",
+      "password": "123456"
     }
-  ],
-  
-  "users": []
+  ]
 }

@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import './register.css';
@@ -17,7 +36,7 @@ export default function Register({ setPage }) {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/users', { username, password });
+      const response = await axios.post('http://localhost:5001/users', { username, password });
       if (response.status === 201) {
         setPage('login');
       } else {
