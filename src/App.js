@@ -21,6 +21,7 @@ function App() {
   const [db, setDb] = useState(null);
 
   useEffect(() => {
+<<<<<<< HEAD
     const initializeDb = async () => {
       const dbInstance = await initDatabase();
       setDb(dbInstance);
@@ -54,6 +55,64 @@ function App() {
     await updateImportance(db, id, importance);
     const todos = await getTodos(db);
     setTodos(todos);
+=======
+    axios.get('http://localhost:3000/todos')
+      .then(response => {
+        setTodos(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching todos:', error);
+      });
+  }, []);
+
+  const addTodo = (task) => {
+    const newTodo = {
+      task,
+      completed: false,
+      importance: 'none',
+    };
+    axios.post('http://localhost:3000/todos', newTodo)
+      .then(response => {
+        setTodos([...todos, response.data]);
+      })
+      .catch(error => {
+        console.error('Error adding todo:', error);
+      });
+  };
+
+  const removeTodo = (id) => {
+    axios.delete(`http://localhost:3000/todos/${id}`)
+      .then(() => {
+        setTodos(todos.filter(t => t.id !== id));
+      })
+      .catch(error => {
+        console.error('Error removing todo:', error);
+      });
+  };
+
+  const completeTodo = (id) => {
+    const todoToUpdate = todos.find(t => t.id === id);
+    const updatedTodo = { ...todoToUpdate, completed: !todoToUpdate.completed };
+    axios.put(`http://localhost:3000/todos/${id}`, updatedTodo)
+      .then(response => {
+        setTodos(todos.map(t => t.id === id ? response.data : t));
+      })
+      .catch(error => {
+        console.error('Error updating todo:', error);
+      });
+  };
+
+  const updateImportance = (id, importance) => {
+    const todoToUpdate = todos.find(t => t.id === id);
+    const updatedTodo = { ...todoToUpdate, importance };
+    axios.put(`http://localhost:3000/todos/${id}`, updatedTodo)
+      .then(response => {
+        setTodos(todos.map(t => t.id === id ? response.data : t));
+      })
+      .catch(error => {
+        console.error('Error updating importance:', error);
+      });
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
   };
 
   const renderPage = () => {
@@ -88,6 +147,7 @@ function App() {
 
 export default App;
 
+<<<<<<< HEAD
 
 
 
@@ -202,3 +262,5 @@ export default App;
 // }
 
 // export default App;
+=======
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be

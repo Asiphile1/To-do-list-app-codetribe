@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+=======
+import axios from 'axios';
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
 import './login.css';
 import { getUser } from '../database';
 
@@ -17,7 +21,21 @@ export default function Login({ setPage, db }) {
     }
 
     try {
+<<<<<<< HEAD
       const user = await getUser(db, username, password);
+=======
+      const response = await axios.get('http://localhost:3000/users', {
+        params: {
+          username,
+          password,
+        },
+      });
+
+      const user = response.data.find(
+        (user) => user.username === username && user.password === password
+      );
+
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
       if (user) {
         setPage('home');
       } else {
@@ -56,6 +74,7 @@ export default function Login({ setPage, db }) {
     </div>
   );
 }
+<<<<<<< HEAD
 
 
 
@@ -145,3 +164,5 @@ export default function Login({ setPage, db }) {
 //     </div>
 //   );
 // }
+=======
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be

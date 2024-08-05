@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
 import { RiCloseCircleLine } from "react-icons/ri";
 import { BiCheckCircle } from "react-icons/bi";
 import './Item.css';
@@ -27,3 +30,8 @@ export default function TodoItem(props) {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be

@@ -20,3 +20,7 @@ export const updateTodo = async (id, updatedTodo) => {
   const response = await axios.put(`${API_URL}/${id}`, updatedTodo);
   return response.data;
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be

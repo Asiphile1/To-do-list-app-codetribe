@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import './register.css';
 import { addUser } from '../database';
+=======
+import axios from 'axios';
+import './register.css';
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
 
 export default function Register({ setPage, db }) {
   const [username, setUsername] = useState('');
@@ -17,8 +22,17 @@ export default function Register({ setPage, db }) {
     }
 
     try {
+<<<<<<< HEAD
       await addUser(db, username, password);
       setPage('login');
+=======
+      const response = await axios.post('http://localhost:3000/users', { username, password });
+      if (response.status === 201) {
+        setPage('login');
+      } else {
+        setError('Failed to register');
+      }
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
     } catch (error) {
       setError('Failed to register');
       console.error('Error registering user:', error);
@@ -52,6 +66,7 @@ export default function Register({ setPage, db }) {
     </div>
   );
 }
+<<<<<<< HEAD
 
 
 
@@ -135,3 +150,5 @@ export default function Register({ setPage, db }) {
 //     </div>
 //   );
 // }
+=======
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be

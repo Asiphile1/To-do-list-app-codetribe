@@ -6,10 +6,14 @@ import TodoItem from './Item';
 export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo, updateImportance }) {
   const [input, setInput] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (input.trim() === '') return;
-    addTodo(input);
+    await addTodo({
+      task: input,
+      completed: false,
+      importance: ''
+    });
     setInput("");
   };
 
@@ -44,3 +48,8 @@ export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo
     </Box>
   );
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1b31acaf9232b46aafa7456b81183f5cc25ef0be
