@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
+import axios from 'axios';
 import './login.css';
 
 export default function Login({ setPage }) {
@@ -10,20 +9,34 @@ export default function Login({ setPage }) {
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateEmail(username)) {
       setError('Invalid email format');
       return;
     }
 
-    signInWithEmailAndPassword(auth, username, password)
-      .then(() => {
-        setPage('home');
-      })
-      .catch((error) => {
-        setError(error.message);
+    try {
+      const response = await axios.get('http://localhost:3000/users', {
+        params: {
+          username,
+          password,
+        },
       });
+
+      const user = response.data.find(
+        (user) => user.username === username && user.password === password
+      );
+
+      if (user) {
+        setPage('home');
+      } else {
+        setError('Invalid username or password');
+      }
+    } catch (error) {
+      setError('Failed to login');
+      console.error('Error logging in:', error);
+    }
   };
 
   return (
@@ -53,5 +66,3 @@ export default function Login({ setPage }) {
     </div>
   );
 }
-
-

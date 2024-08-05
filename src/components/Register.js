@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';
-import './register.css'; 
+import axios from 'axios';
+import './register.css';
 
 export default function Register({ setPage }) {
   const [username, setUsername] = useState('');
@@ -10,20 +9,24 @@ export default function Register({ setPage }) {
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateEmail(username)) {
       setError('Invalid email format');
       return;
     }
 
-    createUserWithEmailAndPassword(auth, username, password)
-      .then(() => {
+    try {
+      const response = await axios.post('http://localhost:3000/users', { username, password });
+      if (response.status === 201) {
         setPage('login');
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+      } else {
+        setError('Failed to register');
+      }
+    } catch (error) {
+      setError('Failed to register');
+      console.error('Error registering user:', error);
+    }
   };
 
   return (
@@ -53,4 +56,3 @@ export default function Register({ setPage }) {
     </div>
   );
 }
-
