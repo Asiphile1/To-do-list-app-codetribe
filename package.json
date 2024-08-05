@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Asiphile1.github.io/To-do-list-app-codetribe",
   "name": "to-do-app",
   "version": "0.1.0",
   "private": true,
@@ -12,17 +13,22 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "body-parser": "^1.20.2",
+    "browserify-fs": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "path-browserify": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-scripts": "^5.0.1",
+    "sql.js": "^1.11.0",
     "sqlite3": "^5.1.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

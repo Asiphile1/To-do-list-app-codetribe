@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Button, TextField } from '@mui/material';
 import './form.css';
-import TodoItem from './Item';  // Ensure this path is correct
+import TodoItem from './Item';
 
 export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo, updateImportance }) {
   const [input, setInput] = useState("");
@@ -16,7 +16,7 @@ export default function Form({ setPage, addTodo, todos, removeTodo, completeTodo
   return (
     <Box sx={{ textAlign: 'center', p: 3 }}>
       <video autoPlay loop muted className="video-background">
-        <source src="/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        <source src="/public/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
       </video>
       <form onSubmit={handleSubmit} className="todo-form">
         <TextField

@@ -23,16 +23,22 @@
   ],
   "todos": [
     {
-      "id": 1722518032083,
+      "id": "1722518032083",
       "task": "bath",
       "completed": false,
-      "importance": ""
+      "importance": "red"
     },
     {
-      "id": 1722518037048,
+      "id": "1722518037048",
       "task": "aege",
       "completed": false,
-      "importance": ""
+      "importance": "red"
+    },
+    {
+      "id": "1722520918970",
+      "task": "er a5eua64u",
+      "completed": false,
+      "importance": "orange"
     }
   ]
 }
