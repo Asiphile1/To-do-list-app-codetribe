@@ -3,8 +3,10 @@ const path = require('path');
 module.exports = {
   resolve: {
     fallback: {
-      "fs": require.resolve('browserify-fs'),
-      "path": require.resolve('path-browserify')
+      "fs": false, 
+      "path": require.resolve('path-browserify'),
+      "util": require.resolve('util/'),
+      "stream": require.resolve('stream-browserify')
     }
   },
   entry: './src/index.js',
@@ -23,10 +25,14 @@ module.exports = {
             presets: ['@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   plugins: [
-    // Add any necessary plugins here
+    
   ]
 };
