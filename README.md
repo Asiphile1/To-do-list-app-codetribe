@@ -25,7 +25,7 @@ To run this project locally, follow these steps:
 
 Clone the repository:
 
-git clone https://github.com/your-username/to-do-list-app.git
+git clone https://github.com/Asiphile1/To-do-list-app-codetribe/tree/sql.js
 cd to-do-list-app
 
 
