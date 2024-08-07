@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+To-Do List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description
 
-## Available Scripts
+This is a React-based To-Do List application with three main pages: Login, Registration, and Home. The application supports user authentication and authorization, CRUD operations for to-do list items, priority levels with different colors, and uses SQL.js for storage. The UI is designed with Material UI components and features a background video.
 
-In the project directory, you can run:
+Features
 
-### `npm start`
+User Authentication: Users can register and log in to manage their to-do lists.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To-Do List Management: Users can add, update, delete, and search for to-do list items.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Priority Levels: To-do items can be categorized as High (Red), Medium (Yellow), or Low (Green) priority.
 
-### `npm test`
+Responsive Design: The application is responsive and user-friendly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Background Video: A background video is displayed throughout the app.
 
-### `npm run build`
+Material UI: The application uses Material UI components for a modern look and feel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run this project locally, follow these steps:
 
-### `npm run eject`
+Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git clone https://github.com/your-username/to-do-list-app.git
+cd to-do-list-app
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install dependencies:
 
-## Learn More
+npm install
+Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+npm start
+Open the app in your browser:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Registration:
 
-### Advanced Configuration
+Navigate to the Registration page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Enter a username and password to create a new account.
+Login:
 
-### Deployment
+Navigate to the Login page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Enter your username and password to log in.
 
-### `npm run build` fails to minify
+Home:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Add new to-do items with a description and priority level.
+Edit existing to-do items.
+Delete to-do items.
+Search for to-do items by keyword.
+
+
+
+Project Structure
+
+
+src/
+|-- components/
+|   |-- Home.js
+|   |-- Login.js
+|   |-- Registration.js
+|   |-- TodoItem.js
+|-- services/
+|   |-- auth.js
+|   |-- todoService.js
+|-- App.js
+|-- App.css
+|-- index.js
+|-- background.mp4
+
+
+
+components/: Contains React components for the Login, Registration, Home, and TodoItem.
+
+services/: Contains service files for authentication and to-do item management.
+
+App.js: The main app component.
+
+App.css: The main stylesheet.
+
+index.js: The entry point of the application.
+
+background.mp4: The background video file.
+
+
+Dependencies
+
+react
+react-dom
+react-router-dom
+@mui/material
+@mui/icons-material
+sql.js
+
+
+Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contact
+
+For questions or feedback, please contact asiphilemthethwa@gmail.com.
+
+Feel free to customize this README to fit your specific project details and preferences.
