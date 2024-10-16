@@ -1,22 +1,33 @@
 import React, { useState } from "react";
-import { Box, Button, TextField, Typography } from '@mui/material';
-import './form.css';
-import Item from './Item';
+import { Box, Button, TextField, Typography } from "@mui/material";
+import "./form.css";
+import Item from "./Item";
 
-export default function Form({ setPage, addTodo, todos, setTodos, removeTodo, completeTodo, updateImportance }) {
+export default function Form({
+  setPage,
+  addTodo,
+  todos,
+  setTodos,
+  removeTodo,
+  completeTodo,
+  updateImportance,
+}) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.trim() === '') return;
+    if (input.trim() === "") return;
     addTodo(input);
     setInput("");
   };
 
   return (
-    <Box sx={{ textAlign: 'center', p: 3 }}>
+    <Box sx={{ textAlign: "center", p: 3 }}>
       <video autoPlay loop muted className="video-background">
-        <source src="/assets/5561389-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+        <source
+          src="/assets/5561389-uhd_3840_2160_25fps.mp4"
+          type="video/mp4"
+        />
       </video>
       <form onSubmit={handleSubmit} className="todo-form">
         <TextField
@@ -27,11 +38,18 @@ export default function Form({ setPage, addTodo, todos, setTodos, removeTodo, co
           variant="outlined"
           fullWidth
         />
-        <Button type="submit" variant="contained" color="primary" className="todo-button">Add Task</Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          className="todo-button"
+        >
+          Add Task
+        </Button>
       </form>
       <ul>
-        {todos.map(todo => (
-          <Item 
+        {todos.map((todo) => (
+          <Item
             key={todo.id}
             todo={todo}
             removeTodo={removeTodo}
@@ -40,20 +58,17 @@ export default function Form({ setPage, addTodo, todos, setTodos, removeTodo, co
           />
         ))}
       </ul>
-      <Button onClick={() => setPage('login')} variant="contained" color="secondary" className="logout-button">Logout</Button>
+      <Button
+        onClick={() => setPage("login")}
+        variant="contained"
+        color="secondary"
+        className="logout-button"
+      >
+        Logout
+      </Button>
     </Box>
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import './form.css';
@@ -95,7 +110,7 @@ export default function Form({ setPage, addTodo, todos, setTodos, removeTodo, co
 //       </form>
 //       <ul>
 //         {todos.map(todo => (
-//           <Item 
+//           <Item
 //             key={todo.id}
 //             todo={todo}
 //             removeTodo={(id) => setTodos(todos.filter(t => t.id !== id))}
@@ -116,5 +131,3 @@ export default function Form({ setPage, addTodo, todos, setTodos, removeTodo, co
 //     </div>
 //   );
 // }
-
-
