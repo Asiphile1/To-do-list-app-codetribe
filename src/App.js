@@ -64,20 +64,6 @@ export default function App() {
   );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useState } from "react";
 // import Form from "./components/Form"
 
@@ -131,20 +117,11 @@ export default function App() {
 //         removeTodo={removeTodo}
 //         completeTodo={completeTodo}
 //         updateImportance={updateImportance}
-//         setPage={() => console.log("Navigating to login...")} // 
+//         setPage={() => console.log("Navigating to login...")} //
 //       />
 //     </div>
 //   );
 // }
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
@@ -240,50 +217,14 @@ export default function App() {
 
 // export default App;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useState } from 'react';
 // import Register from './components/Register';
 // import Login from './components/Login';
-// import Form from './components/Form'; 
+// import Form from './components/Form';
 // import './App.css'; // Import your App.css or any global styles
 
 // function App() {
-//   const [page, setPage] = useState('login'); 
+//   const [page, setPage] = useState('login');
 //   const [todos, setTodos] = useState([]);
 
 //   const addTodo = (task) => {
@@ -318,5 +259,3 @@ export default function App() {
 // }
 
 // export default App;
-
-
