@@ -4,6 +4,8 @@
 
 This To-Do List Application is a full-featured web application designed for managing daily tasks with CRUD (Create, Read, Update, Delete) functionality. It allows users to register, log in, and manage a personalized to-do list with a user-friendly interface. The application is developed using HTML, CSS, JavaScript, SQLite, and Material UI for enhancing visual appeal. It is fully responsive and implements user authentication and data validation for secure usage.
 
+hosted app link: 
+
 ## Features
 * User Authentication:
 
@@ -110,32 +112,37 @@ This To-Do List Application is a full-featured web application designed for mana
 
 1. Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-repository-url
+```bash
+
+git clone [https://github.com/your-repository-url](https://github.com/Asiphile1/To-do-list-app-codetribe)
+```
 cd todo-list-app
 
 2. Set up the database:
-Create an SQLite database to store users and tasks.
 
-bash
-Copy code
-sqlite3 todo-app.db
+Run the server where database users and tasks are stored.
 
-3. Install dependencies (if using Node.js backend):
-bash
+```bash
+json-server --watch db.json --port 5000
+```
+
+3. Install dependencies:
+
+```bash
 Copy code
 npm install
+```
 
 4. Run the application:
-If you are using Node.js, run the server:
 
-bash
+```bash
 Copy code
 npm start
+```
 
 5. Open the app:
 Open index.html in your web browser to view the app.
+
 
 ## Database Structure
 
@@ -181,6 +188,8 @@ Users Table
 * Drag-and-Drop Feature: Allowing users to prioritize tasks by dragging and dropping them in order.
 * Multi-User Collaboration: Allowing multiple users to share and collaborate on to-do lists.
 * Improved UI/UX: Further enhancing the interface with animations and additional Material UI components.
+
+#Screenshots
 
 
 This To-Do List Application offers a full suite of task management features, including user authentication, CRUD operations, and a modern interface enhanced with Material UI. With its focus on responsiveness, ease of use, and security, this application is suitable for personal and professional use.
