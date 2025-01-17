@@ -4,7 +4,7 @@
 
 This To-Do List Application is a full-featured web application designed for managing daily tasks with CRUD (Create, Read, Update, Delete) functionality. It allows users to register, log in, and manage a personalized to-do list with a user-friendly interface. The application is developed using HTML, CSS, JavaScript, SQLite, and Material UI for enhancing visual appeal. It is fully responsive and implements user authentication and data validation for secure usage.
 
-hosted app link: 
+## hosted app link: 
 
 ## Features
 * User Authentication:
